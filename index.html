@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Kick DJ</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #1e1e2f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .panel {
+    background: linear-gradient(135deg, #2c2c3e, #3d3d5a);
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    color: #00BFFF;
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #FF416C, #FF4B2B);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,75,43,0.5);
+  }
+
+  #log {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 8px;
+    height: 120px;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 0.9em;
+  }
+
+  .status {
+    color: #00FF00;
+    font-weight: bold;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="panel">
+  <h1>Painel Kick DJ - Ao Vivo</h1>
+  
+  <button class="button" onclick="kickDJ()">Kick DJ</button>
+  <button class="button" onclick="startStream()">Iniciar Stream</button>
+  <button class="button" onclick="stopStream()">Parar Stream</button>
+  
+  <div id="log">
+    <p><span class="status">Sistema:</span> Painel pronto.</p>
+  </div>
+</div>
+
+<script>
+const log = document.getElementById('log');
+
+function addLog(message) {
+  const p = document.createElement('p');
+  p.innerHTML = message;
+  log.appendChild(p);
+  log.scrollTop = log.scrollHeight;
+}
+
+function kickDJ() {
+  // Simulação de kick
+  addLog('<span class="status">Ação:</span> DJ foi removido do ao vivo!');
+  alert('DJ kickado! (simulação)');
+}
+
+function startStream() {
+  addLog('<span class="status">Ação:</span> Stream iniciada.');
+  alert('Stream iniciada! (simulação)');
+}
+
+function stopStream() {
+  addLog('<span class="status">Ação:</span> Stream parada.');
+  alert('Stream parada! (simulação)');
+}
+</script>
+
+</body>
+</html>
